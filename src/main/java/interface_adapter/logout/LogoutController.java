@@ -8,10 +8,10 @@ import use_case.logout.LogoutInputData;
  */
 public class LogoutController {
 
-    private LogoutInputBoundary logoutUseCaseInteractor;
+    private final LogoutInputBoundary logoutUseCaseInteractor;
 
     public LogoutController(LogoutInputBoundary logoutUseCaseInteractor) {
-        // TODO: Save the interactor in the instance variable.
+        this.logoutUseCaseInteractor = logoutUseCaseInteractor;
     }
 
     /**
@@ -22,6 +22,6 @@ public class LogoutController {
         final LogoutInputData logoutInputData = new LogoutInputData(
                 username);
 
-        logoutUseCaseInteractor.execute(logoutInputData);
+        this.logoutUseCaseInteractor.execute(logoutInputData);
     }
 }
